@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>polymorphisms</title>
+</head>
+<body>
+<script>
+    //        Сделать реализацию полиморфизма
+    //        фигура -> квадрат. треугольник. круг. ромб.
+    //        для метода getSquare()
+    //        переопределись соответствующие методы  с Object чтобы можно было делать
+    //        console.log( triangle + circle)
+
+//        function Rectangle (name, w, h){
+//            this.name = name;
+//            this.width = w;
+//            this.height = h;
+//            this.getArea = function () {  //Rectangle.prototype.getArea = function
+//                return this.width*this.height;
+//            }
+//        }
+//        var rect = new Rectangle(100, 500);
+//        document.write("Area of the rectangle" + rect.getArea());
+    //
+//        function Triangle(name, a, h) {
+//            this.name = name;
+//            this.length = a;
+//            this.height = h;
+//            this.getArea = function(){
+//                return (this.length)/2*this.height;
+//            }
+//        }
+//        var trian = new Triangle (10, 20);
+//        document.write("Area of the triangle" + trian.getArea());
+
+    function Shape(name) {
+        this.name = name;
+        this.writeArea = function () {
+            console.log(this.area());
+        }
+    }
+    function Triangle(name, lenght, height) {
+        this.name = name;
+        this.length = lenght;
+        this.height = height;
+    }
+
+    function Square(name, side) {
+        this.name = name;
+        this.side = side;
+    }
+
+    function Circle(name, radius) {
+        this.name = name;
+        this.radius = radius;
+    }
+
+    function Rhombus(name, side, height) {
+        this.name = name;
+        this.side = side;
+        this.height = height;
+    }
+
+    var figure = new Shape (' ');
+    Triangle.prototype = figure;
+    Square.prototype = figure;
+    Circle.prototype = figure;
+    Rhombus.prototype = figure;
+
+    var new_triangle = new Triangle(10, 20);
+    var new_square = new Square(10);
+    var new_circle = new Circle(10);
+    var new_rhombus = new Rhombus(10,5);
+
+    Triangle.prototype.area = function () {
+        return (this.length)/2*this.height;
+    };
+    console.log(new_triangle.area());
+    new_triangle.writeArea();
+
+    Square.prototype.area = function () {
+        return this.side*this.side;
+    };
+    console.log(new_square.area());
+    new_square.writeArea();
+
+    Circle.prototype.area = function () {
+        return (Math.PI * this.radius * this.radius).toFixed(2);
+    };
+    console.log(new_circle.area());
+    new_circle.writeArea();
+
+    Rhombus.prototype.area = function () {
+        return this.side * this.height;
+    };
+    console.log(new_rhombus.area());
+    new_rhombus.writeArea();
+
+    //method valueOf
+
+    Triangle.prototype.valueOf = function () {
+        return this.area();
+    };
+    Square.prototype.valueOf = function () {
+        return this.area();
+    };
+    Circle.prototype.valueOf = function () {
+        return this.area();
+    };
+    Rhombus.prototype.valueOf = function () {
+        return this.area();
+    };
+
+    console.log(new_triangle + new_circle);
+
+    //method toString
+
+    Triangle.prototype.toString = function () {
+        return "Triangle: " + this.length + ', ' + this.height + '. <br>';
+    };
+    Square.prototype.toString = function () {
+        return "Square: " + this.side + '. <br>';
+    };
+    Circle.prototype.toString = function () {
+        return "Circle: " + this.radius + '. <br>';
+    };
+
+    Rhombus.prototype.toString = function () {
+        return "Rhombus: " + this.side + 'and height' + this.height + '. <br>';
+    };
+</script>
+
+</body>
+</html>
