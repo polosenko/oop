@@ -34,29 +34,29 @@
 //        var trian = new Triangle (10, 20);
 //        document.write("Area of the triangle" + trian.getArea());
 
-    function Shape(name) {
+    function Shape() {
         this.name = name;
         this.writeArea = function () {
             console.log(this.area());
         }
     }
-    function Triangle(name, lenght, height) {
+    function Triangle(lenght, height) {
         this.name = name;
         this.length = lenght;
         this.height = height;
     }
 
-    function Square(name, side) {
+    function Square(side) {
         this.name = name;
         this.side = side;
     }
 
-    function Circle(name, radius) {
+    function Circle(radius) {
         this.name = name;
         this.radius = radius;
     }
 
-    function Rhombus(name, side, height) {
+    function Rhombus(side, height) {
         this.name = name;
         this.side = side;
         this.height = height;
