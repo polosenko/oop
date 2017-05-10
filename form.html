@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FormValidation</title>
+    <script type = "text/javascript" src = "validationForm.js"></script>
+    <link rel = "stylesheet" href="style_validation.css">
+    <style>
+        .error {
+            background-color: red;
+        }
+        .valid {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<!--сделать форму с 4 полями(email телефон имя возраст)
+добавить валидацию  по регулярном выражению и добавлять бордер если поле не прошло валидацию -->
+<div>
+
+    <form name = "form">
+
+        Name:
+        <input type = "text" name = "name" placeholder="Name" required><br>
+
+        Age:
+        <input type = "text" name = "age" placeholder="Age" required><br>
+
+        Phone:
+        <input type = "text"
+               name = "phone"
+               placeholder="+380__-___-__-__"
+               required
+               data-val = "/\+38\ (\d{3}\) \d{3}-\d{2}-\d{2}/"><br>
+        Email:
+        <input type = "email"
+               name = "email"
+               placeholder = "email format"
+               required
+               data-val = "/\b[a-z0-9._] + @[a-z0-9.-]+\.[a-z]{2,4}\b/i"><br>
+
+        <button type = "send">Send</button><br>
+        <button type = "reset">Reset</button>
+    </form>
+</div>
+
+<script>
+
+//var pattern = /\d\d/;
+//var age = 12;
+///\d\d/.test(12);
+//
+//        var inputEmail = document.querySelector('#email').value; //('input[name=email]');
+//        var value = inputEmail.value;
+//        var pattern = /\b[a-z0-9._] + @[a-z0-9.-]+\.[a-z]{2,4}\b/i; //validation email;
+//            if pattern.test(value) === false {
+//                inputEmail.styles.fontSize = "1px sold red";
+//            }
+
+//        var input = "";
+//    if (pattern.test(input)){
+//        document.write("Строка " + input + "не соответсвует возрасту"<br />);
+//    };
+//    pattern =/\+38\ (\d{3}\) \d{3}-\d{2}-\d{2}/;
+//    text = "+38(063)996-62-83";
+//    document.write(text + " -> " + pattern.test(text) + "<br />");
+//
+//    pattern = /[а-яА-Я]+ [а-яА-Я]+[а-яА-Я]/;
+//    text = "Иванов Иван Иванович";
+//    document.write(text + "-> " + pattern.test(text)+ "<br />");
+//
+//
+//    document.getElementbyId.button.onclick;
+//    function validate () {
+//
+//    }
+//     document.getElementsBytagname input.
+//        value
+
+//    function valid(form) {
+//        var name = form.name.value;
+//        var email = form.email.value;
+//        var adr_pattern=/[0-9a-z_]+@[0-9a-z_]+\.[a-z]{2,5}/i;
+//        var fail = false;
+//
+//        if(name == "" || name == " ");
+//            fail = "please pass your name!";
+//        else if(adr_pattern.test(email) == false);
+//            fail = "please enter the correct email!";
+//        if(fail)
+//            alert(fail);
+//        else
+//            window.location = "index.html"
+//    }
+
+</script>
+</body>
+</html>
