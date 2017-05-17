@@ -1,7 +1,9 @@
-document.getElementbyId.button.onclick;
+
+
+
+    // document.getElementbyId.button.onclick;
 
 function valid(form) {
-
     var inputEmail = document.querySelector('#email').value;
     var value = inputEmail.value;
     var pattern = /\b[a-z0-9._] + @[a-z0-9.-]+\.[a-z]{2,4}\b/i;
@@ -20,3 +22,5 @@ function valid(form) {
     text = "Иванов Иван Иванович";
     document.write(text + "-> " + pattern.test(text) + "<br />");
 }
+
+    button.onclick = valid;
